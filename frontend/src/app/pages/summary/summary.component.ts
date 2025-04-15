@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-summary',
-  imports: [],
+  standalone: true, // Mark as standalone
+  imports: [CommonModule], // Add required modules here
   templateUrl: './summary.component.html',
-  styleUrl: './summary.component.css'
+  styleUrls: ['./summary.component.css'],
 })
-export class SummaryComponent {
-
-}
+export class SummaryComponent {}

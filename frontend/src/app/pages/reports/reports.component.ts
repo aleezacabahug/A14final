@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reports',
-  imports: [],
+  standalone: true, // Mark as standalone
+  imports: [CommonModule], // Add required modules here
   templateUrl: './reports.component.html',
-  styleUrl: './reports.component.css'
+  styleUrls: ['./reports.component.css'],
 })
-export class ReportsComponent {
-
-}
+export class ReportsComponent {}
