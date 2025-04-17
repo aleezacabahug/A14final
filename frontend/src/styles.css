@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+  display: flex;
+  background-color: #333;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar a.active {
+  background-color: #007bff;
+  color: white;
+}
