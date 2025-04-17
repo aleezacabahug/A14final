@@ -10,9 +10,12 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')));
+// Serve Angular static files from the correct build output
+app.use(express.static(path.join(__dirname, '../frontend/dist/frontend/browser')));
+
+// Serve the main index.html on root
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/frontend/index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/dist/frontend/browser/index.html'));
 });
 
 // Hardcoded credentials for testing
@@ -24,7 +27,7 @@ const SECRET_KEY = 'aleeza'; // Replace with a secure key in production
 app.use(cors());
 app.use(bodyParser.json());
 
-// Connect to MongoDB (if needed)
+// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/a14final');
 mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
@@ -63,7 +66,7 @@ app.get('/api/dashboard', (req, res) => {
   });
 });
 
-// Serve static files (if needed)
+// Serve static files (optional)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Start the server
