@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, '../frontend/dist/frontend/browser')
 
 // Serve the main index.html on root
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/frontend/browser/index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/dist/frontend/browser/index.csr.html'));
 });
 
 // Login route
